@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>The market - Jason Singh</title>
+<style>
+/* ==========================================================
+   Jason Singh · APAC Field Marketing · Anthropic
+   v4 · editorial. Rules not boxes. Type carries the weight.
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Inter:wght@400;450;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  --paper:#FFFFFF;
+  --ink:#100F0E;
+  --ink-2:#33312D;
+  --grey:#6B6862;
+  --grey-2:#9C9990;
+  --rule:#E2E0DA;
+  --rule-2:#C8C5BC;
+  --tint:#F7F6F3;
+
+  --clay:#B8542F;
+  --moss:#3F5C4A;
+  --indigo:#2F4364;
+
+  --serif:'Newsreader',Georgia,serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+
+  --wrap:64rem;
+  --prose:37rem;
+}
+
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+ font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+:focus-visible{outline:2px solid var(--clay);outline-offset:3px;}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+ backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--rule);}
+.nav-in{max-width:var(--wrap);margin:0 auto;padding:.9rem 2.5rem;display:flex;align-items:baseline;gap:2rem;}
+.nav-name{font-family:var(--serif);font-size:1.05rem;letter-spacing:-.01em;white-space:nowrap;}
+.nav ul{display:flex;gap:1.5rem;list-style:none;margin:0 0 0 auto;padding:0;}
+.nav a{font-size:.82rem;font-weight:450;color:var(--grey);text-decoration:none;white-space:nowrap;
+ padding-bottom:2px;border-bottom:1px solid transparent;transition:color .15s,border-color .15s;}
+.nav a:hover{color:var(--ink);}
+.nav a.active{color:var(--ink);border-bottom-color:var(--clay);}
+
+/* ---------- layout ---------- */
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 2.5rem;}
+.prose{max-width:var(--prose);}
+.head{padding:5.5rem 0 3rem;}
+.sec{padding:4rem 0 0;}
+.sec + .sec{padding-top:4.5rem;}
+hr.rule{border:none;border-top:1px solid var(--rule);margin:3.5rem 0 0;}
+hr.thin{border:none;border-top:1px solid var(--rule);margin:1.6rem 0;}
+
+/* ---------- type ---------- */
+.num{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--clay);
+ text-transform:uppercase;display:block;margin-bottom:1.4rem;}
+.num.grey{color:var(--grey-2);}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,6vw,4.3rem);line-height:1.04;
+ letter-spacing:-.022em;margin:0 0 1.6rem;max-width:16ch;}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.85rem,3.4vw,2.6rem);line-height:1.1;
+ letter-spacing:-.018em;margin:0 0 1.1rem;max-width:22ch;}
+h3{font-family:var(--serif);font-weight:500;font-size:1.22rem;letter-spacing:-.012em;margin:0 0 .5rem;line-height:1.25;}
+h4{font-family:var(--sans);font-size:.94rem;font-weight:600;letter-spacing:-.01em;margin:0 0 .35rem;}
+p{margin:0 0 1.1rem;}
+p:last-child{margin-bottom:0;}
+.lead{font-family:var(--serif);font-weight:300;font-size:clamp(1.28rem,2.3vw,1.62rem);line-height:1.42;
+ letter-spacing:-.012em;color:var(--ink-2);max-width:34ch;}
+.intro{font-size:1.06rem;line-height:1.6;color:var(--ink-2);max-width:var(--prose);}
+.body{color:var(--ink-2);max-width:var(--prose);}
+.grey{color:var(--grey);}
+.sm{font-size:.9rem;}
+.mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-2);}
+strong,b{font-weight:600;}
+em{font-style:italic;}
+
+/* ---------- proof line ---------- */
+.proof{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1.6rem;align-items:baseline;
+ padding:1.5rem 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);margin:2.5rem 0 0;}
+.proof .pv{font-family:var(--serif);font-size:2.5rem;font-weight:400;letter-spacing:-.03em;line-height:1;
+ color:var(--clay);white-space:nowrap;}
+.proof .pt{font-size:.95rem;line-height:1.5;color:var(--ink-2);max-width:44ch;}
+.proof .pt b{font-weight:600;}
+
+/* ---------- columns ---------- */
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3rem;}
+.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.4rem;}
+.side{display:grid;grid-template-columns:13rem minmax(0,1fr);gap:3rem;align-items:start;}
+
+/* ---------- definition rows (no boxes) ---------- */
+.defs{margin:0;}
+.defs div{padding:1rem 0;border-top:1px solid var(--rule);}
+.defs div:first-child{border-top:1px solid var(--ink);}
+.defs dt{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
+ color:var(--grey-2);margin-bottom:.35rem;}
+.defs dd{margin:0;font-size:.95rem;line-height:1.55;color:var(--ink-2);}
+.defs dd.neg{color:var(--clay);}
+
+/* ---------- selector rows (text-led tabs) ---------- */
+.sel{display:flex;flex-wrap:wrap;gap:1.6rem;padding-bottom:.9rem;border-bottom:1px solid var(--rule);}
+.sel button{appearance:none;background:none;border:none;padding:0 0 .5rem;cursor:pointer;font:inherit;
+ font-size:.92rem;font-weight:450;color:var(--grey);letter-spacing:-.005em;
+ border-bottom:2px solid transparent;margin-bottom:-1rem;transition:color .15s,border-color .15s;}
+.sel button:hover{color:var(--ink);}
+.sel button[aria-selected="true"]{color:var(--ink);font-weight:600;border-bottom-color:var(--clay);}
+.sel .n{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;color:var(--grey-2);margin-right:.45rem;}
+
+.vsel{display:flex;flex-direction:column;gap:0;}
+.vsel button{appearance:none;background:none;border:none;border-left:2px solid var(--rule);cursor:pointer;
+ font:inherit;text-align:left;padding:.55rem 0 .55rem 1rem;color:var(--grey);
+ font-size:.92rem;transition:color .15s,border-color .15s;}
+.vsel button:hover{color:var(--ink);}
+.vsel button[aria-selected="true"]{color:var(--ink);font-weight:600;border-left-color:var(--clay);}
+.vsel .k{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.09em;
+ text-transform:uppercase;color:var(--grey-2);margin-bottom:.1rem;font-weight:400;}
+
+.detail{padding-top:2rem;min-height:19rem;}
+.detail h3{font-size:1.65rem;font-weight:400;margin-bottom:.9rem;}
+.detail .dl{font-size:1.02rem;line-height:1.58;color:var(--ink-2);max-width:42rem;margin-bottom:1.8rem;}
+.stage-c{color:var(--clay);} .stage-n{color:var(--moss);} .stage-p{color:var(--indigo);}
+
+/* ---------- programme accordion ---------- */
+.plist{border-top:1px solid var(--ink);}
+.prow{border-bottom:1px solid var(--rule);}
+.phead{display:grid;grid-template-columns:2.4rem minmax(0,1fr) auto;gap:1.2rem;align-items:baseline;
+ width:100%;appearance:none;background:none;border:none;cursor:pointer;font:inherit;
+ text-align:left;padding:1.1rem 0;transition:opacity .15s;}
+.phead .pn{font-family:var(--mono);font-size:.72rem;color:var(--grey-2);}
+.phead .pname{font-family:var(--serif);font-size:1.2rem;font-weight:400;letter-spacing:-.012em;}
+.phead .pstage{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;}
+.prow.hidden{display:none;}
+.pbody{padding:0 0 1.6rem 3.6rem;max-width:46rem;}
+.pbody .pd{font-size:.97rem;line-height:1.58;color:var(--ink-2);margin-bottom:1.3rem;}
+.pmeta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem;}
+.pmeta .k{font-family:var(--mono);font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;
+ color:var(--grey-2);display:block;margin-bottom:.25rem;}
+.pmeta .v{font-size:.9rem;line-height:1.5;color:var(--ink-2);}
+.pran{margin-top:1.3rem;padding-top:1rem;border-top:1px solid var(--rule);}
+.pran .k{color:var(--clay);}
+@media (max-width:640px){.pbody{padding-left:0;}}
+
+/* ---------- ladder ---------- */
+.lad{border-top:1px solid var(--ink);}
+.ltier{padding:1.5rem 0;border-bottom:1px solid var(--rule);}
+.ltier .lt{font-family:var(--mono);font-size:.66rem;letter-spacing:.11em;text-transform:uppercase;
+ color:var(--grey-2);margin-bottom:1rem;}
+.lrow{display:grid;gap:1.4rem 2rem;}
+.l2{grid-template-columns:repeat(2,minmax(0,1fr));}
+.l5{grid-template-columns:repeat(5,minmax(0,1fr));}
+.l3{grid-template-columns:repeat(3,minmax(0,1fr));}
+.lnode{appearance:none;background:none;border:none;padding:0;cursor:pointer;font:inherit;text-align:left;
+ transition:opacity .15s;}
+.lnode .lk{font-family:var(--mono);font-size:.61rem;letter-spacing:.09em;text-transform:uppercase;
+ color:var(--grey-2);display:block;margin-bottom:.3rem;}
+.lnode .ln{font-family:var(--serif);font-size:1.05rem;font-weight:500;letter-spacing:-.01em;
+ display:block;margin-bottom:.25rem;line-height:1.25;}
+.lnode .ld{font-size:.82rem;line-height:1.45;color:var(--grey);display:block;}
+.lnode .lm{font-family:var(--mono);font-size:.68rem;line-height:1.5;color:var(--grey);display:block;}
+.lnode.dim{opacity:.2;}
+.lnode.lit .ln{color:var(--clay);}
+.lnode[aria-pressed="true"] .ln{color:var(--clay);text-decoration:underline;text-underline-offset:3px;}
+.k-brand .lk{color:var(--clay);} .k-rev .lk{color:var(--indigo);}
+
+/* ---------- budget lines ---------- */
+.blines{border-top:1px solid var(--ink);}
+.bl{display:grid;grid-template-columns:minmax(0,1fr) 9rem 3rem 5rem;gap:1.4rem;align-items:center;
+ padding:.75rem 0;border-bottom:1px solid var(--rule);}
+.bl .bn{font-size:.94rem;}
+.bl .bt{height:3px;background:var(--tint);}
+.bl .bf{display:block;height:100%;}
+.bl .bp{font-family:var(--serif);font-size:1.05rem;text-align:right;}
+.bl .bd{font-family:var(--mono);font-size:.74rem;color:var(--grey);text-align:right;}
+.fc{background:var(--clay);} .fn{background:var(--moss);} .fp{background:var(--indigo);} .fr{background:var(--rule-2);}
+
+/* ---------- quarters ---------- */
+.qrow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2rem;border-top:1px solid var(--ink);padding-top:1.5rem;}
+.qcol .qn{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
+ color:var(--grey-2);display:block;margin-bottom:.6rem;}
+.qcol .qh{font-family:var(--serif);font-size:3rem;font-weight:300;line-height:1;color:var(--clay);
+ display:block;margin-bottom:.7rem;letter-spacing:-.03em;}
+.qcol p{font-size:.87rem;line-height:1.5;color:var(--grey);}
+.qcol .qt{font-family:var(--mono);font-size:.66rem;color:var(--grey-2);display:block;margin-top:.7rem;}
+
+/* ---------- next ---------- */
+.next{display:block;border-top:1px solid var(--ink);margin-top:4rem;padding:1.4rem 0 0;text-decoration:none;color:inherit;}
+.next .nl{font-family:var(--mono);font-size:.66rem;letter-spacing:.11em;text-transform:uppercase;color:var(--grey-2);}
+.next .nn{font-family:var(--serif);font-size:1.6rem;font-weight:400;letter-spacing:-.015em;display:block;margin-top:.3rem;
+ transition:color .15s;}
+.next:hover .nn{color:var(--clay);}
+
+/* ---------- readout ---------- */
+.readout{font-family:var(--mono);font-size:.72rem;color:var(--grey);margin-top:1rem;}
+.readout b{color:var(--ink);font-weight:500;}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--rule);margin-top:5rem;padding:2.5rem 0 3.5rem;}
+.f-in{max-width:var(--wrap);margin:0 auto;padding:0 2.5rem;display:flex;flex-wrap:wrap;gap:1rem;
+ justify-content:space-between;align-items:baseline;}
+.f-in .fn2{font-family:var(--serif);font-size:1.05rem;}
+footer a{color:var(--clay);text-decoration:none;}
+footer a:hover{text-decoration:underline;}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .nav-in{flex-direction:column;align-items:flex-start;gap:.6rem;padding:.8rem 1.5rem;}
+  .nav ul{margin:0;gap:1.1rem;overflow-x:auto;scrollbar-width:none;width:100%;}
+  .nav ul::-webkit-scrollbar{display:none;}
+  .cols,.cols3,.side{grid-template-columns:1fr;gap:2rem;}
+  .l5,.l3{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .qrow{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.6rem;}
+}
+@media (max-width:640px){
+  body{font-size:16px;}
+  .wrap,.f-in{padding:0 1.3rem;}
+  .head{padding:3rem 0 2rem;}
+  .sec,.sec + .sec{padding-top:2.75rem;}
+  .l2,.l5,.l3,.pmeta,.qrow{grid-template-columns:1fr;}
+  .proof{grid-template-columns:1fr;gap:.5rem;}
+  .bl{grid-template-columns:minmax(0,1fr) 2.6rem 4.4rem;gap:.8rem;}
+  .bl .bt{display:none;}
+  .vsel{flex-direction:row;overflow-x:auto;scrollbar-width:none;}
+  .vsel button{border-left:none;border-bottom:2px solid var(--rule);white-space:nowrap;padding:.5rem 1rem .5rem 0;}
+  .vsel button[aria-selected="true"]{border-left:none;border-bottom-color:var(--clay);}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+
+/* ==========================================================
+   AFFORDANCE LAYER
+   Everything clickable must look clickable.
+   ========================================================== */
+
+/* --- tab strips: inactive tabs now sit on a visible rule --- */
+.sel{gap:1.4rem;}
+.sel button{
+  border-bottom:2px solid var(--rule);
+  padding:.15rem .1rem .55rem;
+  display:inline-flex;align-items:center;gap:.45rem;
+}
+.sel button::after{
+  content:'';width:5px;height:5px;border-radius:50%;
+  background:var(--rule-2);transition:background .15s,transform .15s;
+}
+.sel button:hover{color:var(--ink);border-bottom-color:var(--rule-2);}
+.sel button:hover::after{background:var(--clay);}
+.sel button[aria-selected="true"]{border-bottom-color:var(--clay);}
+.sel button[aria-selected="true"]::after{background:var(--clay);transform:scale(1.25);}
+
+/* --- vertical persona list: chevron affordance --- */
+.vsel button{
+  display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding-right:.7rem;
+}
+.vsel button::after{
+  content:'';width:6px;height:6px;flex:none;
+  border-right:1.5px solid var(--rule-2);border-bottom:1.5px solid var(--rule-2);
+  transform:rotate(-45deg);transition:border-color .15s,transform .15s;
+}
+.vsel button:hover{background:var(--tint);}
+.vsel button:hover::after{border-color:var(--grey);}
+.vsel button[aria-selected="true"]{background:var(--tint);}
+.vsel button[aria-selected="true"]::after{border-color:var(--clay);transform:rotate(-45deg) scale(1.15);}
+
+/* --- programme accordion: plus / minus --- */
+.phead{grid-template-columns:2.4rem minmax(0,1fr) auto 1.6rem;}
+.phead:hover{background:var(--tint);}
+.phead:hover .pname{color:var(--clay);}
+.pi{position:relative;width:14px;height:14px;justify-self:end;display:block;}
+.pi::before,.pi::after{
+  content:'';position:absolute;background:var(--grey-2);transition:transform .18s,background .15s;
+}
+.pi::before{left:0;top:6px;width:14px;height:1.5px;}
+.pi::after{left:6px;top:0;width:1.5px;height:14px;}
+.phead:hover .pi::before,.phead:hover .pi::after{background:var(--clay);}
+.phead[aria-expanded="true"] .pi::after{transform:scale(0,1);}
+.phead[aria-expanded="true"] .pi::before{background:var(--clay);}
+.prow:has(.phead[aria-expanded="true"]){background:var(--tint);}
+.prow:has(.phead[aria-expanded="true"]) .pname{color:var(--clay);}
+
+/* --- ladder nodes: hover surface + marker --- */
+.lnode{padding:.7rem .8rem;margin:-.7rem -.8rem;border-radius:3px;
+ border-left:2px solid transparent;transition:background .15s,border-color .15s,opacity .15s;}
+.lnode:hover{background:var(--tint);border-left-color:var(--rule-2);}
+.lnode .ln{display:flex;align-items:baseline;gap:.4rem;}
+.lnode .ln::after{
+  content:'';width:5px;height:5px;flex:none;border-radius:50%;
+  background:var(--rule-2);transition:background .15s;
+}
+.lnode:hover .ln::after{background:var(--clay);}
+.lnode[aria-pressed="true"]{background:var(--tint);border-left-color:var(--clay);}
+.lnode[aria-pressed="true"] .ln::after{background:var(--clay);}
+.lnode.lit{border-left-color:var(--clay);}
+
+/* --- a consistent "this is interactive" caption --- */
+.hint{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);
+ font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;color:var(--clay);
+ margin-bottom:.9rem;}
+.hint::before{
+  content:'';width:13px;height:13px;flex:none;border-radius:50%;
+  border:1.5px solid var(--clay);
+  background:radial-gradient(circle at 50% 50%, var(--clay) 0 2.5px, transparent 2.6px);
+}
+
+@media (max-width:640px){
+  .lnode{margin:0;padding:.7rem .8rem;background:var(--tint);border-radius:4px;}
+}
+
+/* ==========================================================
+   ICONS
+   ========================================================== */
+[data-ic]{display:inline-flex;align-items:center;justify-content:center;flex:none;
+ width:1.15em;height:1.15em;color:currentColor;}
+[data-ic] svg{width:100%;height:100%;display:block;}
+
+.ic-lg{width:26px;height:26px;color:var(--clay);margin-bottom:.9rem;display:flex;}
+.ic-md{width:21px;height:21px;}
+.ic-sm{width:16px;height:16px;}
+
+/* stage-tinted icons */
+.ic-c{color:var(--clay);} .ic-n{color:var(--moss);} .ic-p{color:var(--indigo);}
+
+/* icon + heading pairing */
+.ihead{display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem;}
+.ihead h3{margin:0;}
+.ihead [data-ic]{width:20px;height:20px;}
+
+/* icon inside selector rows */
+.vsel button [data-ic]{width:17px;height:17px;margin-right:.55rem;color:var(--grey-2);transition:color .15s;}
+.vsel button:hover [data-ic],.vsel button[aria-selected="true"] [data-ic]{color:var(--clay);}
+.vsel button .lbl{display:flex;align-items:center;min-width:0;}
+.vsel button .txt{min-width:0;}
+.sel button [data-ic]{width:16px;height:16px;color:var(--grey-2);transition:color .15s;}
+.sel button:hover [data-ic],.sel button[aria-selected="true"] [data-ic]{color:var(--clay);}
+
+/* panel heading icon */
+.dhead{display:flex;align-items:center;gap:.7rem;margin-bottom:.9rem;}
+.dhead [data-ic]{width:26px;height:26px;color:var(--clay);}
+.dhead h3{margin:0;}
+
+/* programme row icon */
+.phead .pic{width:18px;height:18px;justify-self:center;}
+.phead .pic[data-ic]{color:var(--rule-2);transition:color .15s;}
+.phead:hover .pic[data-ic]{color:var(--clay);}
+
+/* stage marker in budget/portfolio */
+.legend{display:flex;flex-wrap:wrap;gap:1.6rem;margin:0 0 1.6rem;}
+.legend span{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--mono);
+ font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);}
+.legend [data-ic]{width:16px;height:16px;}
+
+/* portfolio matrix */
+.matrix{width:100%;border-collapse:collapse;margin-top:.5rem;}
+.matrix th{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;
+ color:var(--grey-2);font-weight:400;text-align:left;padding:0 .5rem .7rem;border-bottom:1px solid var(--ink);
+ vertical-align:bottom;}
+.matrix th:first-child{width:11rem;}
+.matrix td{padding:.55rem .5rem;border-bottom:1px solid var(--rule);vertical-align:middle;font-size:.82rem;}
+.matrix td:first-child{color:var(--ink-2);}
+.matrix .dot{display:block;width:9px;height:9px;border-radius:50%;margin:0 auto;background:var(--rule);}
+.matrix .dot.on-c{background:var(--clay);}
+.matrix .dot.on-n{background:var(--moss);}
+.matrix .dot.on-p{background:var(--indigo);}
+.matrix td.cell{text-align:center;}
+@media (max-width:760px){.matrix{font-size:.74rem;}.matrix th:first-child{width:8rem;}}
+
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-in">
+<div class="nav-name">Jason Singh</div>
+<ul>
+<li><a href="index.html">Overview</a></li>
+<li><a href="market.html" class="active">The market</a></li>
+<li><a href="audience.html">The audience</a></li>
+<li><a href="programmes.html">The programmes</a></li>
+<li><a href="numbers.html">The numbers</a></li>
+</ul>
+</div></nav>
+
+<header class="head"><div class="wrap">
+<span class="num">System one &middot; the two-layer model</span>
+<h1>APAC enterprises buy on trust, credibility and partnership.</h1>
+<p class="lead">Enterprise AI is a long-term bet on a company rather than a comparison of features, and in this region the evidence that settles it has to be local.</p>
+</div></header>
+
+<section class="sec"><div class="wrap">
+<div class="cols">
+<div>
+<p class="intro">A San Francisco reference does not settle a Japanese consensus process. Korean enterprises take their lead from precedent set by their own conglomerates. Australian public sector buyers want regulatory standing established before they will look at a product. Indian buyers want the economics proven at their own volume rather than someone else's. Southeast Asian buyers move faster and more commercially, and the entry point there is usually a digital-native business rather than an incumbent. And across all five, a far larger share of the buying runs through system integrators than it does in the United States.</p>
+<p class="intro">Asia Pacific is five buying cultures rather than one region, and the proof has to be built inside each of them. That is a brand to be built rather than a funnel to be filled.</p>
+</div>
+<div>
+<p class="intro">The system I use to read this has two layers. The first is what the buyer is thinking, which tells you what to say. The second is what we have to prove to them, which tells you what to build. Most organisations run one layer and wonder why their pipeline reports do not explain their results.</p>
+<p class="intro">The value is in the disagreement between them. An account can be down to a two-horse shortlist and still be blocked on credibility, because the finance function does not believe the number. It looks late-stage on every dashboard and it will not close. No amount of closing activity fixes it, and the cause is invisible unless you are reading both layers at once.</p>
+</div>
+</div>
+</div></section>
+
+<hr class="rule">
+
+<section class="sec"><div class="wrap">
+<span class="num grey">Layer one</span>
+<h2>What the buyer is thinking.</h2>
+<p class="intro" style="margin-bottom:2.2rem">Nobody in this region is unaware of AI, so the top of the conventional awareness cycle is empty. The unawareness sits one level down, and it concerns what enterprise adoption actually requires.</p>
+
+<p class="hint">Select a stage to see how it presents</p>
+<div class="sel" id="awsel">
+<button data-k="unaware" aria-selected="true"><span class="n">01</span>Unaware</button>
+<button data-k="problem" aria-selected="false"><span class="n">02</span>Problem aware</button>
+<button data-k="solution" aria-selected="false"><span class="n">03</span>Solution aware</button>
+<button data-k="vendor" aria-selected="false"><span class="n">04</span>Vendor aware</button>
+<button data-k="most" aria-selected="false"><span class="n">05</span>Most aware</button>
+<button data-k="post" aria-selected="false"><span class="n">06</span>Post-close</button>
+</div>
+<div class="detail" id="awdet"></div>
+</div></section>
+
+<hr class="rule">
+
+<section class="sec"><div class="wrap">
+<span class="num grey">Layer two</span>
+<h2>What we have to prove.</h2>
+<p class="intro" style="margin-bottom:2.5rem">Three stages. Sequential for any single account, concurrent for the function, because the portfolio is always spread across all three.</p>
+
+<div class="cols3">
+<div>
+<div class="ihead"><i data-ic="cred" class="ic-c"></i><h3 class="stage-c">Credibility</h3></div>
+<dl class="defs">
+<div><dt>What it is</dt><dd>Being believed on enterprise deployment by organisations that have not yet deployed at scale.</dd></div>
+<div><dt>What it is not</dt><dd class="neg">Awareness. They already know who Anthropic is. Buying reach solves a problem that does not exist.</dd></div>
+<div><dt>What it must prove</dt><dd>That comparable organisations, in their market and their industry, moved from scattered individual use to deployed capability, and what measurably changed when they did.</dd></div>
+<div><dt>Working when</dt><dd>Inbound conversations open with how rather than who.</dd></div>
+</dl>
+</div>
+<div>
+<div class="ihead"><i data-ic="cons" class="ic-n"></i><h3 class="stage-n">Consideration</h3></div>
+<dl class="defs">
+<div><dt>What it is</dt><dd>Making the business case buildable in a form the customer's own finance function will accept.</dd></div>
+<div><dt>What it is not</dt><dd class="neg">A feature comparison. The blocker is rarely capability. It is that returns are hard to attribute and nobody can produce a defensible number.</dd></div>
+<div><dt>What it must prove</dt><dd>That a case can be constructed and survive budget review, and that security, sovereignty and residency are settled rather than outstanding.</dd></div>
+<div><dt>Working when</dt><dd>Committee coverage widens beyond the original sponsor and assurance questions arrive already answered.</dd></div>
+</dl>
+</div>
+<div>
+<div class="ihead"><i data-ic="cap" class="ic-p"></i><h3 class="stage-p">Capture</h3></div>
+<dl class="defs">
+<div><dt>What it is</dt><dd>Closing the deal and landing it far enough that the deployment produces a measured outcome.</dd></div>
+<div><dt>What it is not</dt><dd class="neg">A handover at signature. Signature produces no proof, so marketing stays involved until there is a number worth reusing.</dd></div>
+<div><dt>What it must prove</dt><dd>That the deployment works in production and generates a result the customer will stand behind publicly.</dd></div>
+<div><dt>Working when</dt><dd>Cycle times fall, referenced deals close faster, and new proof enters the library every quarter.</dd></div>
+</dl>
+</div>
+</div>
+
+<div class="proof">
+<div class="pv">$46M</div>
+<div class="pt">Pipeline generated from a Formula 1 hospitality programme run across thirty-two races for Fortune 500 executives. <b>Convening senior buyers is how credibility gets built at the top of an organisation,</b> and it is measured on opportunities created rather than on attendance.</div>
+</div>
+</div></section>
+
+<hr class="rule">
+
+<section class="sec"><div class="wrap">
+<span class="num grey">Why both layers</span>
+<h2>Capture produces the proof that credibility runs on.</h2>
+<p class="intro" style="margin-bottom:2.5rem">This is a loop rather than a funnel. The measured outcome at the end of one deal is the local evidence that starts the next one, which is why the function has to stay involved past signature. Proof is the primary thing this system manufactures.</p>
+
+<svg viewBox="0 0 860 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" role="img" aria-label="Credibility leads to Consideration leads to Capture, and the measured outcome returns to Credibility.">
+<defs><marker id="a5" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+<path d="M0,0 L7,3.2 L0,6.4 z" fill="#C8C5BC"/></marker></defs>
+
+<line x1="20" y1="30" x2="270" y2="30" stroke="#B8542F" stroke-width="2"/>
+<text x="20" y="62" font-family="Newsreader, serif" font-size="24" fill="#100F0E">Credibility</text>
+<text x="20" y="86" font-family="Inter, sans-serif" font-size="12.5" fill="#6B6862">Unaware &middot; Problem aware</text>
+
+<line x1="305" y1="30" x2="555" y2="30" stroke="#3F5C4A" stroke-width="2"/>
+<text x="305" y="62" font-family="Newsreader, serif" font-size="24" fill="#100F0E">Consideration</text>
+<text x="305" y="86" font-family="Inter, sans-serif" font-size="12.5" fill="#6B6862">Solution aware &middot; Vendor aware</text>
+
+<line x1="590" y1="30" x2="840" y2="30" stroke="#2F4364" stroke-width="2"/>
+<text x="590" y="62" font-family="Newsreader, serif" font-size="24" fill="#100F0E">Capture</text>
+<text x="590" y="86" font-family="Inter, sans-serif" font-size="12.5" fill="#6B6862">Most aware &middot; Post-close</text>
+
+<line x1="278" y1="52" x2="298" y2="52" stroke="#C8C5BC" stroke-width="1.2" marker-end="url(#a5)"/>
+<line x1="563" y1="52" x2="583" y2="52" stroke="#C8C5BC" stroke-width="1.2" marker-end="url(#a5)"/>
+
+<path d="M715 108 L715 150 Q715 162 703 162 L57 162 Q45 162 45 150 L45 112"
+ fill="none" stroke="#B8542F" stroke-width="1.2" stroke-dasharray="4 4" marker-end="url(#a5)"/>
+<rect x="272" y="148" width="216" height="28" fill="#FFFFFF"/>
+<text x="380" y="167" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" letter-spacing="1" fill="#B8542F">MEASURED OUTCOME BECOMES LOCAL PROOF</text>
+</svg>
+</div></section>
+
+<div class="wrap"><a class="next" href="audience.html"><span class="nl">Next</span><span class="nn">The audience</span><span class="sm grey">Who we target, and what we say</span></a></div>
+
+<footer><div class="f-in">
+<div class="fn2">Jason Singh</div>
+<div class="sm grey"><a href="mailto:jasonsingh826@gmail.com">jasonsingh826@gmail.com</a> &middot; <a href="https://linkedin.com/in/jasonsingh1">LinkedIn</a> &middot; Singapore</div>
+</div></footer>
+<script>
+window.ICONS={
+lob:'<path d="M4 17a8 8 0 0 1 16 0"/><path d="M12 17l4.5-4.5"/>',
+cfo:'<rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 12h.01M18 12h.01"/>',
+cio:'<rect x="3" y="4" width="18" height="6.5" rx="1.5"/><rect x="3" y="13.5" width="18" height="6.5" rx="1.5"/><path d="M6.8 7.2h.01M6.8 16.8h.01"/>',
+ciso:'<path d="M12 3l7.5 3v5.2c0 4.7-3.1 8.4-7.5 10.3-4.4-1.9-7.5-5.6-7.5-10.3V6z"/><circle cx="12" cy="10.8" r="1.5"/><path d="M12 12.3v2.4"/>',
+ai:'<circle cx="12" cy="4.8" r="2"/><circle cx="5" cy="18.5" r="2"/><circle cx="19" cy="18.5" r="2"/><path d="M12 6.8v3.4M11 11.2L6.4 16.6M13 11.2l4.6 5.4"/>',
+prac:'<rect x="2.5" y="4" width="19" height="16" rx="2"/><path d="M7 9.5l3 2.5-3 2.5M12.5 15h5"/>',
+proc:'<rect x="5" y="4.5" width="14" height="16.5" rx="2"/><path d="M9.5 4.5V3h5v1.5M9 10.5h6M9 14.5h6M9 18h3.5"/>',
+ceo:'<path d="M12 2.8v5.4M8.2 8.2h7.6l-1 12.6H9.2zM5 20.8h14"/>',
+reg:'<path d="M12 4.5v15.5M6.5 20h11M3.8 9.2h16.4M6.4 9.2L3.9 14.4a3 3 0 0 0 5 0zM17.6 9.2l-2.5 5.2a3 3 0 0 0 5 0z"/>',
+fin:'<path d="M3 10h18M4.2 10V9l7.8-5 7.8 5v1M6.5 10.5v7M10 10.5v7M14 10.5v7M17.5 10.5v7M3 20.5h18"/>',
+retail:'<path d="M5.2 8h13.6l-1.2 12.4H6.4z"/><path d="M9 8V6.2a3 3 0 0 1 6 0V8"/>',
+tech:'<rect x="7" y="7" width="10" height="10" rx="1.6"/><path d="M10 3.2v3.6M14 3.2v3.6M10 17.2v3.6M14 17.2v3.6M3.2 10h3.6M3.2 14h3.6M17.2 10h3.6M17.2 14h3.6"/>',
+gov:'<path d="M4 20.8h16M6.2 20.8V7.4l5.8-3 5.8 3v13.4M10 12.5h4M10 16.5h4"/>',
+prof:'<rect x="3" y="7" width="18" height="13.4" rx="2"/><path d="M9 7V5.2h6V7M3 12.4h18"/>',
+telco:'<circle cx="12" cy="12" r="2"/><path d="M8.6 8.6a4.8 4.8 0 0 0 0 6.8M15.4 8.6a4.8 4.8 0 0 1 0 6.8M5.7 5.7a8.9 8.9 0 0 0 0 12.6M18.3 5.7a8.9 8.9 0 0 1 0 12.6"/>',
+cred:'<circle cx="12" cy="9.6" r="5.8"/><path d="M9 14.6L8 21l4-2 4 2-1-6.4"/>',
+cons:'<path d="M7 4.8v14.4M7 19.2l-3-3M7 19.2l3-3M17 19.2V4.8M17 4.8l-3 3M17 4.8l3 3"/>',
+cap:'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.6"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/>',
+roi:'<path d="M3 17.2l6-6 4 4 8-8M15.2 7.2H21v5.8"/>',
+link:'<path d="M10.2 13.4a4.2 4.2 0 0 0 6 0l2.6-2.6a4.2 4.2 0 0 0-6-6l-1.3 1.3M13.8 10.6a4.2 4.2 0 0 0-6 0l-2.6 2.6a4.2 4.2 0 0 0 6 6l1.3-1.3"/>',
+layers:'<path d="M12 3.2l8.6 4.6-8.6 4.6-8.6-4.6zM3.4 12.6l8.6 4.6 8.6-4.6M3.4 16.6l8.6 4.6 8.6-4.6"/>',
+target:'<circle cx="12" cy="12" r="7"/><path d="M12 2.2v3.6M12 18.2v3.6M2.2 12h3.6M18.2 12h3.6"/>',
+grid:'<rect x="3.2" y="3.2" width="7.2" height="7.2" rx="1.2"/><rect x="13.6" y="3.2" width="7.2" height="7.2" rx="1.2"/><rect x="3.2" y="13.6" width="7.2" height="7.2" rx="1.2"/><rect x="13.6" y="13.6" width="7.2" height="7.2" rx="1.2"/>',
+bars:'<path d="M3.5 20.8V11M9.8 20.8V4.4M16.1 20.8v-7.6M22 20.8V7.6"/>',
+loop:'<path d="M4.5 12a7.5 7.5 0 0 1 12.8-5.3M19.5 12a7.5 7.5 0 0 1-12.8 5.3"/><path d="M17.4 3.4v3.4h-3.4M6.6 20.6v-3.4h3.4"/>',
+flag:'<path d="M6 21V4M6 4.6h11l-2.2 4 2.2 4H6"/>',
+doc:'<path d="M6 3.2h7.6L19 8.6V20.8H6zM13.4 3.2v5.6H19"/><path d="M9 13h7M9 16.6h5"/>'
+};
+window.hydrateIcons=function(root){
+ (root||document).querySelectorAll('[data-ic]:empty').forEach(function(el){
+  var p=window.ICONS[el.getAttribute('data-ic')]; if(!p) return;
+  el.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" '
+   +'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+p+'</svg>';
+ });
+};
+document.addEventListener('DOMContentLoaded',function(){window.hydrateIcons();});
+</script>
+<script>
+const AWD={
+unaware:{t:'Unaware',s:'Credibility',c:'stage-c',q:'AI is an individual productivity tool.',
+ w:'Claude is already inside the building, used by individuals and expensed on personal cards. Nobody owns it, there is no enterprise agreement, and no one has connected it to a number that appears in an operating review.',
+ n:'That organisations of their size and shape have moved from scattered individual use to deployed capability, and what measurably changed for them when they did.',
+ f:'Treating this as an awareness problem and buying reach. They know the brand perfectly well. What they have not done is connect it to their own operations.'},
+problem:{t:'Problem aware',s:'Credibility',c:'stage-c',q:'We are spending on AI and cannot prove what we got.',
+ w:'One or more pilots have run and usage exists. The finance function has asked what the return was, nobody has a clean answer, and the next round of funding is now in doubt.',
+ n:'How comparable organisations structured their measurement, not simply what outcome they reached. At this stage the method is the useful part.',
+ f:'Leading with capability. They are not short of capability. They are short of proof.'},
+solution:{t:'Solution aware',s:'Consideration',c:'stage-n',q:'We need a different approach, not just a different model.',
+ w:'They have accepted that the problem is workflow design and measurement rather than model selection. They are working out how to do this properly before they decide what to buy.',
+ n:'A defensible path from pilot to production, and someone who has walked that path in their industry and their market.',
+ f:'Pushing them toward a vendor comparison before they have a shape. It reads as a supplier solving its own problem rather than theirs.'},
+vendor:{t:'Vendor aware',s:'Consideration',c:'stage-n',q:'Claude could be the enterprise choice for us.',
+ w:'Shortlisting has begun. Security, sovereignty, residency and procurement enter the process, and the buying committee widens well beyond the original sponsor.',
+ n:'Assurance answers that arrive before the questions are asked, and a reference customer they can actually telephone.',
+ f:'Leaving trust questions to be handled one account at a time by whoever happens to be nearest to the deal.'},
+most:{t:'Most aware',s:'Capture',c:'stage-p',q:'We are down to Claude and one other.',
+ w:'Late stage. Executive sponsorship is being sought internally and commercial terms are in play. One seat on the committee is usually still unconvinced, and it is rarely the one doing the talking.',
+ n:'Contact at their own level of seniority, and evidence that the partnership will still be worth having in five years.',
+ f:'Discounting, rather than identifying and resolving whichever seat is actually blocking the decision.'},
+post:{t:'Post-close',s:'Capture',c:'stage-p',q:'We have it. Now we need it used and measured.',
+ w:'Signed and deploying. Usage now determines renewal and expansion, and in a consumption business that is the revenue line. This is also where the next customer\u2019s proof is manufactured.',
+ n:'Adoption support, instrumentation, and a route to a result they will be willing to stand behind publicly.',
+ f:'Treating signature as the end of marketing\u2019s responsibility, which starves the proof engine and reappears two quarters later as a credibility problem.'}
+};
+const sel=[...document.querySelectorAll('#awsel button')];
+const det=document.getElementById('awdet');
+function draw(k){
+ const d=AWD[k];
+ sel.forEach(b=>b.setAttribute('aria-selected',b.dataset.k===k?'true':'false'));
+ det.innerHTML='<h3 class="'+d.c+'">&ldquo;'+d.q+'&rdquo;</h3>'
+ +'<p class="dl">'+d.w+'</p>'
+ +'<div class="cols"><div><dl class="defs">'
+ +'<div><dt>What they need to see</dt><dd>'+d.n+'</dd></div></dl></div>'
+ +'<div><dl class="defs"><div><dt>What usually goes wrong</dt><dd class="neg">'+d.f+'</dd></div></dl></div></div>'
+ +'<p class="readout"><b>'+d.t+'</b> &middot; '+d.s+' does the work at this stage</p>';
+}
+sel.forEach(b=>b.addEventListener('click',()=>draw(b.dataset.k)));
+draw('unaware');
+</script>
+</body>
+</html>
